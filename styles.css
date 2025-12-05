@@ -1,86 +1,89 @@
+/* Talk2Health — Premium CSS (desktop + mobile) with Brand Palette */
 :root {
-  --color-bg: #2C2C2C;        /* Deep Charcoal */
-  --color-primary: #E26D5C;   /* Warm Coral */
-  --color-accent: #F3D9C1;    /* Soft Peach */
-  --color-muted: #AAB8C2;     /* Calm Blue Gray */
-  --color-text: #FFFFFF;      /* Pure White */
+  --bg-1: #2C2C2C;       /* Deep Charcoal */
+  --bg-2: #2C2C2C;       /* unify background */
+  --accent: #E26D5C;     /* Warm Coral */
+  --teal: #F3D9C1;       /* Soft Peach */
+  --muted: #AAB8C2;      /* Calm Blue Gray */
+  --white: #FFFFFF;      /* Pure White */
+  --glass: rgba(255,255,255,0.08);
+  --card-shadow: 0 8px 24px rgba(44,44,44,0.6);
+  --radius-xl: 20px;
 }
 
-/* General */
 body {
-  background-color: var(--color-bg);
-  color: var(--color-muted);
-  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(160deg,var(--bg-1),var(--bg-2) 60%);
+  color: var(--muted);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Header */
 .site-header {
-  background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-muted);
+  background: linear-gradient(180deg, rgba(44,44,44,0.28), transparent);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .logo-mark {
-  background-color: var(--color-primary);
-  color: var(--color-text);
+  background: var(--accent);
+  color: var(--white);
 }
 .nav a {
-  color: var(--color-text);
+  color: var(--white);
 }
 .nav a:hover {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
+  background: var(--teal);
+  color: var(--bg-1);
 }
 
 /* Buttons */
 .btn.primary {
-  background-color: var(--color-primary);
-  color: var(--color-text);
-  box-shadow: 0 4px 12px rgba(226,109,92,0.4);
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(226,109,92,0.4);
 }
 .btn.ghost {
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-  background-color: transparent;
-}
-.btn.small {
-  font-size: 14px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
 }
 
-/* Hero Section */
-.hero {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
-}
+/* Hero */
 .hero-title {
-  color: var(--color-bg);
+  color: var(--white);
 }
 .hero-sub {
-  color: var(--color-muted);
+  color: var(--muted);
+}
+.mic-blob {
+  background: radial-gradient(circle at 35% 25%, rgba(226,109,92,0.18), transparent 25%),
+              linear-gradient(180deg, rgba(243,217,193,0.12), transparent);
 }
 
-/* Videos Section */
+/* Videos */
 .section-title {
-  color: var(--color-text);
+  color: var(--white);
 }
 .section-desc {
-  color: var(--color-muted);
+  color: var(--muted);
 }
 .video-card {
-  background-color: var(--color-bg);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(44,44,44,0.6);
+  background: linear-gradient(180deg, rgba(44,44,44,0.45), rgba(44,44,44,0.35));
+  box-shadow: var(--card-shadow);
 }
 .video-card h4 {
-  color: var(--color-text);
+  color: var(--white);
 }
 .video-card p {
-  color: var(--color-muted);
+  color: var(--muted);
 }
 
 /* Footer */
 .site-footer {
-  background-color: var(--color-bg);
-  color: var(--color-muted);
+  background: var(--bg-1);
+  color: var(--muted);
 }
 .socials a .icon {
-  fill: var(--color-primary);
+  fill: var(--accent);
 }
