@@ -2,143 +2,73 @@
   "videos": [
     {
       "id": "fb1",
-      "slug": "facebook-video-1",
       "title": "Facebook Video 1",
-      "description": "A Talk2Health awareness clip imported from Facebook.",
       "url": "https://www.facebook.com/share/v/1H2zH3MK4q/",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "General Health",
-      "tags": ["awareness", "community"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     },
     {
       "id": "fb2",
-      "slug": "facebook-video-2",
       "title": "Facebook Video 2",
-      "description": "A Talk2Health awareness clip imported from Facebook.",
       "url": "https://m.facebook.com/story.php?story_fbid=pfbid02S3QZEC73zrBEZ5hvc3fon2vjMuykM9NCydS6XBb6F5fTb5LJtsVq4CSAQKwofvNgl&id=61583259766813&mibextid=ZbWKwL",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "Maternal Health",
-      "tags": ["safe-birth", "pregnancy"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     },
     {
       "id": "fb3",
-      "slug": "facebook-video-3",
       "title": "Facebook Video 3",
-      "description": "A short public-health education clip for social awareness.",
       "url": "https://www.facebook.com/share/r/1DWGUX93Sa/",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "Hygiene",
-      "tags": ["cleanliness", "community"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     },
     {
       "id": "fb4",
-      "slug": "facebook-video-4",
       "title": "Facebook Video 4",
-      "description": "A Talk2Health awareness clip.",
       "url": "https://www.facebook.com/share/v/17wMa9PHPp/",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "Youth Health",
-      "tags": ["youth", "motivation"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     },
     {
       "id": "fb5",
-      "slug": "facebook-video-5",
       "title": "Facebook Video 5",
-      "description": "Health behaviour education for the community.",
       "url": "https://www.facebook.com/share/r/1F9jxE3Gzj/",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "General Health",
-      "tags": ["awareness"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     },
     {
       "id": "fb6",
-      "slug": "facebook-video-6",
       "title": "Facebook Video 6",
-      "description": "Empowering short clip from Talk2Health.",
       "url": "https://www.facebook.com/share/r/1DhjFej6Bk/",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "Motivation",
-      "tags": ["motivation", "youth"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     },
     {
       "id": "fb7",
-      "slug": "facebook-video-7",
       "title": "Facebook Video 7",
-      "description": "A Talk2Health micro-education clip.",
       "url": "https://www.facebook.com/share/r/175Y7Z7yyJ/",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "Hygiene",
-      "tags": ["cleanliness"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     },
     {
       "id": "fb8",
-      "slug": "facebook-video-8",
       "title": "Facebook Video 8",
-      "description": "Community health education clip for mothers and caregivers.",
       "url": "https://m.facebook.com/story.php?story_fbid=pfbid0VemE6hC5GmxFXbejuLjPAFDDmRfsBvXFA6jtHiFtRBAg5QZ6oLvswfchTLt8NK29l&id=61583259766813&mibextid=ZbWKwL",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "Maternal Health",
-      "tags": ["mothers", "caregiving"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     },
     {
       "id": "fb9",
-      "slug": "facebook-video-9",
       "title": "Facebook Video 9",
-      "description": "Brief awareness message for communities.",
       "url": "https://www.facebook.com/share/r/1A1c4MTK2B/",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "General Health",
-      "tags": ["community"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     },
     {
       "id": "fb10",
-      "slug": "facebook-video-10",
       "title": "Facebook Video 10",
-      "description": "Short health education awareness from Talk2Health.",
       "url": "https://www.facebook.com/share/v/1Agsfrr4Hn/",
       "thumbnail": "auto",
-      "source": "facebook",
-      "category": "Youth",
-      "tags": ["youth", "education"],
-      "duration": "auto",
-      "published_at": "2025-01-01",
-      "status": "published"
+      "description": "Imported Facebook video."
     }
   ]
-}l
+}
