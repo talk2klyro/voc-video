@@ -1,74 +1,76 @@
 {
   "videos": [
     {
-      "id": "fb1",
-      "title": "Facebook Video 1",
-      "url": "https://www.facebook.com/share/v/1H2zH3MK4q/",
+      "id": "yt1",
+      "title": "YouTube Short 1",
+      "url": "https://youtube.com/shorts/rkmUHvr59-c?si=En9HSWLZKbAKHZ_x",
       "thumbnail": "auto",
-      "description": "Imported Facebook video."
+      "description": "Imported YouTube short."
     },
     {
-      "id": "fb2",
-      "title": "Facebook Video 2",
-      "url": "https://m.facebook.com/story.php?story_fbid=pfbid02S3QZEC73zrBEZ5hvc3fon2vjMuykM9NCydS6XBb6F5fTb5LJtsVq4CSAQKwofvNgl&id=61583259766813&mibextid=ZbWKwL",
+      "id": "yt2",
+      "title": "YouTube Short 2",
+      "url": "https://youtube.com/shorts/nXRgNIb6ngI?si=j7ptRw35Umw4IzQq",
       "thumbnail": "auto",
-      "description": "Imported Facebook video."
+      "description": "Imported YouTube short."
     },
     {
-      "id": "fb3",
-      "title": "Facebook Video 3",
-      "url": "https://www.facebook.com/share/r/1DWGUX93Sa/",
+      "id": "yt3",
+      "title": "YouTube Short 3",
+      "url": "https://youtube.com/shorts/hJz_PdcaXg8?si=ysOsixzXrGBRCngK",
       "thumbnail": "auto",
-      "description": "Imported Facebook video."
+      "description": "Imported YouTube short."
+    },
+
+    {
+      "id": "yt4",
+      "title": "YouTube Short 4",
+      "url": "https://youtube.com/shorts/rkmUHvr59-c?si=En9HSWLZKbAKHZ_x",
+      "thumbnail": "auto",
+      "description": "Repeated YouTube short (slot filler)."
     },
     {
-      "id": "fb4",
-      "title": "Facebook Video 4",
-      "url": "https://www.facebook.com/share/v/17wMa9PHPp/",
+      "id": "yt5",
+      "title": "YouTube Short 5",
+      "url": "https://youtube.com/shorts/nXRgNIb6ngI?si=j7ptRw35Umw4IzQq",
       "thumbnail": "auto",
-      "description": "Imported Facebook video."
+      "description": "Repeated YouTube short (slot filler)."
     },
     {
-      "id": "fb5",
-      "title": "Facebook Video 5",
-      "url": "https://www.facebook.com/share/r/1F9jxE3Gzj/",
+      "id": "yt6",
+      "title": "YouTube Short 6",
+      "url": "https://youtube.com/shorts/hJz_PdcaXg8?si=ysOsixzXrGBRCngK",
       "thumbnail": "auto",
-      "description": "Imported Facebook video."
+      "description": "Repeated YouTube short (slot filler)."
+    },
+
+    {
+      "id": "yt7",
+      "title": "YouTube Short 7",
+      "url": "https://youtube.com/shorts/rkmUHvr59-c?si=En9HSWLZKbAKHZ_x",
+      "thumbnail": "auto",
+      "description": "Repeated YouTube short (slot filler)."
     },
     {
-      "id": "fb6",
-      "title": "Facebook Video 6",
-      "url": "https://www.facebook.com/share/r/1DhjFej6Bk/",
+      "id": "yt8",
+      "title": "YouTube Short 8",
+      "url": "https://youtube.com/shorts/nXRgNIb6ngI?si=j7ptRw35Umw4IzQq",
       "thumbnail": "auto",
-      "description": "Imported Facebook video."
+      "description": "Repeated YouTube short (slot filler)."
     },
     {
-      "id": "fb7",
-      "title": "Facebook Video 7",
-      "url": "https://www.facebook.com/share/r/175Y7Z7yyJ/",
+      "id": "yt9",
+      "title": "YouTube Short 9",
+      "url": "https://youtube.com/shorts/hJz_PdcaXg8?si=ysOsixzXrGBRCngK",
       "thumbnail": "auto",
-      "description": "Imported Facebook video."
+      "description": "Repeated YouTube short (slot filler)."
     },
     {
-      "id": "fb8",
-      "title": "Facebook Video 8",
-      "url": "https://m.facebook.com/story.php?story_fbid=pfbid0VemE6hC5GmxFXbejuLjPAFDDmRfsBvXFA6jtHiFtRBAg5QZ6oLvswfchTLt8NK29l&id=61583259766813&mibextid=ZbWKwL",
+      "id": "yt10",
+      "title": "YouTube Short 10",
+      "url": "https://youtube.com/shorts/rkmUHvr59-c?si=En9HSWLZKbAKHZ_x",
       "thumbnail": "auto",
-      "description": "Imported Facebook video."
-    },
-    {
-      "id": "fb9",
-      "title": "Facebook Video 9",
-      "url": "https://www.facebook.com/share/r/1A1c4MTK2B/",
-      "thumbnail": "auto",
-      "description": "Imported Facebook video."
-    },
-    {
-      "id": "fb10",
-      "title": "Facebook Video 10",
-      "url": "https://www.facebook.com/share/v/1Agsfrr4Hn/",
-      "thumbnail": "auto",
-      "description": "Imported Facebook video."
+      "description": "Repeated YouTube short (slot filler)."
     }
   ]
 }
