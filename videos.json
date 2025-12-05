@@ -1,0 +1,25 @@
+{
+  "videos": [
+    {
+      "id": "ep1",
+      "title": "Episode 1 — Permission to Heal",
+      "url": "https://www.youtube.com/watch?v=VIDEO_ID_1",
+      "thumbnail": "auto",
+      "description": "A conversation with a community health practitioner."
+    },
+    {
+      "id": "ep2",
+      "title": "Episode 2 — Maternal Care Essentials",
+      "url": "https://www.youtube.com/watch?v=VIDEO_ID_2",
+      "thumbnail": "auto",
+      "description": "Short awareness about planning for safe childbirth."
+    },
+    {
+      "id": "ep3",
+      "title": "Short Clip — Handwashing",
+      "url": "https://example.com/videos/handwash.mp4",
+      "thumbnail": "https://example.com/videos/handwash-thumb.jpg",
+      "description": "A short practical clip."
+    }
+  ]
+}
