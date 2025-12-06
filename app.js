@@ -1,18 +1,7 @@
-/* app.js — Loads videos.json, renders grid, handles player */
-
-/*
-Expected videos.json format:
-{
-  "videos": [
-    {
-      "id": "ep1",
-      "title": "Episode 1 — Permission to Heal",
-      "url": "https://www.youtube.com/watch?v=VIDEO_ID",
-      "thumbnail": "auto" , // or full url
-      "description": "Short description"
-    }
-  ]
-}
+/* app.js — Loads videos.json, renders grid, handles player
+   Updated: supports YouTube shorts (/shorts/VIDEOID), youtu.be links,
+   youtube.com/watch?v=VIDEOID and "si" query params. Auto-thumbnails
+   for "thumbnail": "auto".
 */
 
 const JSON_PATH = 'videos.json'; // edit this file to add new videos
@@ -31,33 +20,95 @@ let currentIndex = 0;
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Helpers
+/* ------------- Helpers ------------- */
+
+/**
+ * Returns true if the url is a youtube/shorts/youtu.be style URL.
+ */
 function isYouTube(url){
   try {
     const u = new URL(url);
-    return u.hostname.includes('youtube.com') || u.hostname.includes('youtu.be');
+    const host = u.hostname.toLowerCase();
+    return host.includes('youtube.com') || host.includes('youtu.be');
   } catch(e){ return false; }
 }
+
+/**
+ * Extracts YouTube video id from these kinds of URLs:
+ * - https://youtube.com/watch?v=VIDEOID
+ * - https://youtu.be/VIDEOID
+ * - https://youtube.com/shorts/VIDEOID
+ * - with extra query params (e.g. ?si=...)
+ * Returns null if not found.
+ */
 function extractYouTubeId(url){
-  // Handles youtube.com/watch?v= and youtu.be links
   try {
     const u = new URL(url);
-    if (u.hostname.includes('youtu.be')) return u.pathname.slice(1);
-    if (u.searchParams.has('v')) return u.searchParams.get('v');
-    // fallback attempt
-    const m = url.match(/v=([^&]+)/);
+
+    // /shorts/VIDEOID
+    if (u.pathname.startsWith('/shorts/')) {
+      // pathname could be '/shorts/ID' or '/shorts/ID/'
+      const parts = u.pathname.split('/');
+      const idx = parts.indexOf('shorts');
+      if (idx !== -1 && parts.length > idx + 1) {
+        return parts[idx + 1].split('?')[0];
+      }
+    }
+
+    // youtu.be/VIDEOID
+    if (u.hostname.includes('youtu.be')) {
+      // pathname like '/VIDEOID'
+      const id = u.pathname.slice(1).split('/')[0];
+      return id || null;
+    }
+
+    // standard watch?v=VIDEOID
+    if (u.searchParams.has('v')) {
+      return u.searchParams.get('v');
+    }
+
+    // fallback: try regex for /v/ or other patterns
+    const regexFallback = url.match(/(?:v=|\/vi\/|\/v\/|\/embed\/|\/watch\?v=|\/shorts\/)([A-Za-z0-9_-]{6,})/);
+    if (regexFallback && regexFallback[1]) return regexFallback[1];
+
+    return null;
+  } catch(e){
+    // last-resort regex if new URL parsing fails
+    const m = url.match(/\/shorts\/([^?\/]+)/) || url.match(/youtu\.be\/([^?\/]+)/) || url.match(/[?&]v=([^&]+)/);
     return m ? m[1] : null;
-  } catch(e){ return null; }
+  }
 }
+
+/**
+ * Build thumbnail URL for a YouTube id.
+ */
 function makeYoutubeThumbnail(id){
   if(!id) return '';
   return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 }
+
+/**
+ * Detect direct video files (mp4, webm, ogg, m3u8).
+ */
 function isDirectVideo(url){
   return /\.(mp4|webm|ogg|m3u8)(\?.*)?$/i.test(url);
 }
 
-// Render functions
+/**
+ * Resolve thumbnail for a video entry (handles "auto").
+ */
+function resolveThumbnail(v){
+  if (v.thumbnail && v.thumbnail !== 'auto') return v.thumbnail;
+  if (isYouTube(v.url)) {
+    const id = extractYouTubeId(v.url);
+    return id ? makeYoutubeThumbnail(id) : '';
+  }
+  // fallback placeholder (optional): you can replace with a real fallback image.
+  return '';
+}
+
+/* ------------- Rendering ------------- */
+
 function renderGrid(){
   videoGrid.innerHTML = '';
   videos.forEach((v, idx) => {
@@ -69,13 +120,8 @@ function renderGrid(){
     thumbWrap.className = 'video-thumb';
 
     const img = document.createElement('img');
-    if (v.thumbnail && v.thumbnail !== 'auto') img.src = v.thumbnail;
-    else if (isYouTube(v.url)){
-      const id = extractYouTubeId(v.url);
-      img.src = makeYoutubeThumbnail(id);
-    } else {
-      img.src = v.thumbnail || '';
-    }
+    const thumb = resolveThumbnail(v);
+    img.src = thumb || '';
     img.alt = v.title || 'Video thumbnail';
     thumbWrap.appendChild(img);
 
@@ -86,7 +132,7 @@ function renderGrid(){
 
     const meta = document.createElement('div');
     meta.className = 'meta';
-    meta.innerHTML = `<h4>${v.title}</h4><p>${v.description || ''}</p>`;
+    meta.innerHTML = `<h4>${escapeHtml(v.title || '')}</h4><p>${escapeHtml(v.description || '')}</p>`;
 
     card.appendChild(thumbWrap);
     card.appendChild(meta);
@@ -95,6 +141,16 @@ function renderGrid(){
 
     videoGrid.appendChild(card);
   });
+}
+
+/* Simple escape to avoid injecting HTML from JSON */
+function escapeHtml(str){
+  return String(str)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }
 
 function renderNextCarousel(currentIdx){
@@ -106,15 +162,17 @@ function renderNextCarousel(currentIdx){
     mini.setAttribute('data-index', idx);
     const id = isYouTube(v.url) ? extractYouTubeId(v.url) : null;
     const src = v.thumbnail && v.thumbnail !== 'auto' ? v.thumbnail : (id ? makeYoutubeThumbnail(id) : (v.thumbnail || ''));
-    mini.innerHTML = `<img src="${src}" alt="${v.title}"><h5>${v.title}</h5>`;
+    mini.innerHTML = `<img src="${src}" alt="${escapeHtml(v.title)}"><h5>${escapeHtml(v.title)}</h5>`;
     mini.addEventListener('click', () => {
       openPlayer(idx);
     });
+
     nextCarousel.appendChild(mini);
   });
 }
 
-// Player open/close
+/* ------------- Player open/close ------------- */
+
 function openPlayer(index){
   currentIndex = index;
   const v = videos[index];
@@ -128,13 +186,24 @@ function openPlayer(index){
 
   if (isYouTube(v.url)){
     const id = extractYouTubeId(v.url);
-    const src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('src', src);
-    iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
-    iframe.setAttribute('allowfullscreen', '');
-    iframe.setAttribute('title', v.title || 'YouTube video player');
-    playerContainer.appendChild(iframe);
+    if (!id) {
+      // If for some reason we couldn't parse id, fallback to embedding full URL in iframe
+      const fallbackIframe = document.createElement('iframe');
+      fallbackIframe.setAttribute('src', v.url);
+      fallbackIframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+      fallbackIframe.setAttribute('allowfullscreen', '');
+      fallbackIframe.setAttribute('title', v.title || 'Embedded video');
+      playerContainer.appendChild(fallbackIframe);
+    } else {
+      // Always use the embed URL form; works for both normal videos and shorts
+      const src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('src', src);
+      iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('title', v.title || 'YouTube video player');
+      playerContainer.appendChild(iframe);
+    }
   } else if (isDirectVideo(v.url)){
     const videoEl = document.createElement('video');
     videoEl.src = v.url;
@@ -159,11 +228,13 @@ function openPlayer(index){
 
 function closePlayer(){
   playerModal.setAttribute('aria-hidden', 'true');
+  // stop any playing media by clearing container
   playerContainer.innerHTML = '';
   document.body.style.overflow = '';
 }
 
-// Load JSON
+/* ------------- Load JSON ------------- */
+
 async function loadVideos(){
   try {
     const res = await fetch(JSON_PATH, {cache: 'no-store'});
@@ -177,7 +248,8 @@ async function loadVideos(){
   }
 }
 
-// Events
+/* ------------- Events ------------- */
+
 closePlayerBtn.addEventListener('click', closePlayer);
 playerModal.addEventListener('click', (ev) => {
   if(ev.target === playerModal) closePlayer();
