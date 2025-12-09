@@ -3,94 +3,70 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Voices of Care</title>
+  <title>Talk2Health — Videos, Audio & Reels</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
-        <div class="logo-mark">VOC</div>
-        <div class="logo-text">Voices of Care Permission To Heal</div>
+        <div class="logo-mark">T2H</div>
+        <div class="logo-text">Talk2Health</div>
       </div>
-      <nav class="nav">
-        <a href="#">Home</a>
-        <a href="#videos">Videos</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+
+      <nav class="top-nav" role="navigation" aria-label="Main">
+        <button class="tab-btn active" data-tab="videos">Videos</button>
+        <button class="tab-btn" data-tab="audio">Audio</button>
+        <button class="tab-btn" data-tab="reels">Reels</button>
       </nav>
-      <button id="reload-json" class="btn small">Reload</button>
+
+      <div class="right-controls">
+        <button id="reload-json" class="btn small">Reload</button>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section id="hero" class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1 class="hero-title">Voices of Care</h1>
-          <p class="hero-sub">Health stories. Real conversations. Permission to heal.</p>
-          <div class="hero-ctas">
-            <a class="btn primary" href="#videos">Watch Videos</a>
-            <a class="btn ghost" href="#about">About</a>
-          </div>
-        </div>
-        <div class="hero-art">
-          <div class="mic-blob" aria-hidden="true"></div>
-        </div>
+    <section id="hero" class="hero container">
+      <div class="hero-copy">
+        <h1 class="hero-title">Talk2Health — Voices of Care</h1>
+        <p class="hero-sub">Health stories, short tips and reels — quick, trusted, human.</p>
       </div>
     </section>
 
-    <!-- Videos Section -->
-    <section id="videos" class="videos container">
-      <h2 class="section-title">Latest Episodes</h2>
-      <p class="section-desc">Together we give our communities <em>permission to heal</em>.</p>
-
-      <div id="video-grid" class="video-grid" aria-live="polite">
-        <!-- Video cards injected here -->
-      </div>
-    </section>
-
-    <!-- Player Modal -->
-    <div id="player-modal" class="player-modal" role="dialog" aria-modal="true" aria-hidden="true">
-      <div class="player-sheet">
-        <button id="close-player" class="close-btn" aria-label="Close player">✕</button>
-        <div class="player-wrap">
-          <div id="player-container" class="player-container">
-            <!-- iframe or <video> inserted here -->
-          </div>
-        </div>
-        <div class="player-meta">
-          <h3 id="player-title">Title</h3>
-          <p id="player-desc" class="muted">Description</p>
-          <div id="next-carousel" class="next-carousel" aria-label="Next episodes">
-            <!-- next cards -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- About -->
-    <section id="about" class="container about">
-      <h2>About VOC</h2>
-      <p>VOICES OF CARE is a community health initiative — short talks and conversations for health education.</p>
+    <section id="content" class="container">
+      <!-- content area; grids are injected here -->
+      <div id="grid-container" class="grid-container"></div>
     </section>
   </main>
 
+  <!-- Player modal (used for video & reel embedding or audio playback) -->
+  <div id="player-modal" class="player-modal" role="dialog" aria-hidden="true">
+    <div class="player-sheet">
+      <button id="close-player" class="close-btn" aria-label="Close player">✕</button>
+
+      <div class="player-wrap">
+        <div id="player-container" class="player-container"></div>
+      </div>
+
+      <div class="player-meta">
+        <h3 id="player-title"></h3>
+        <p id="player-desc" class="muted"></p>
+        <div id="player-actions" class="player-actions"></div>
+        <div id="next-carousel" class="next-carousel" aria-label="Next"></div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© <span id="year"></span> VOC</div>
+      <div>© <span id="year"></span> Talk2Health</div>
       <div class="socials">
-        <a target="_blank" rel="noopener" aria-label="YouTube" href="#"><svg class="icon" viewBox="0 0 24 24"></svg></a>
-        <a target="_blank" rel="noopener" aria-label="WhatsApp" href="#"><svg class="icon" viewBox="0 0 24 24"></svg></a>
+        <a aria-label="YouTube" href="#" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    // Auto-update footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
   <script src="app.js"></script>
 </body>
 </html>
