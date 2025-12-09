@@ -1,0 +1,6 @@
+{
+  "videos": [
+    { "id":"rl1","title":"Reel 1","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Short reel 1" },
+    { "id":"rl2","title":"Reel 2","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Short reel 2" }
+  ]
+}
