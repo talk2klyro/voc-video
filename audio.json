@@ -1,0 +1,6 @@
+{
+  "videos": [
+    { "id":"ad1","title":"Audio — Quick Tip 1","url":"https://example.com/audio/tip1.mp3","thumbnail":"https://img.youtube.com/vi/iGmKiJSV7Uw/hqdefault.jpg","description":"Audio tip 1" },
+    { "id":"ad2","title":"Audio — Quick Tip 2","url":"https://example.com/audio/tip2.mp3","thumbnail":"https://img.youtube.com/vi/iGmKiJSV7Uw/hqdefault.jpg","description":"Audio tip 2" }
+  ]
+}
