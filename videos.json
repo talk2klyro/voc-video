@@ -1,74 +1,14 @@
 {
   "videos": [
-    {
-      "id": "yt1",
-      "title": "YouTube Short 1",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "What is stress? 😩 Have you ever felt like life is too much to handle at once?"
-    },
-    {
-      "id": "yt2",
-      "title": "YouTube Short 2",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "Ever wondered why some days feel heavier than others? 🌧️ Let's explore together."
-    },
-    {
-      "id": "yt3",
-      "title": "YouTube Short 3",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "Feeling overwhelmed? 😔 You’re not alone. Here’s what’s really happening inside your mind."
-    },
-    {
-      "id": "yt4",
-      "title": "YouTube Short 4",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "Life sometimes feels like a heavy load 🏋️‍♂️—how do you cope when it all piles up?"
-    },
-    {
-      "id": "yt5",
-      "title": "YouTube Short 5",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "Stress hits everyone differently 😓. Do you know the signs before it gets too much?"
-    },
-    {
-      "id": "yt6",
-      "title": "YouTube Short 6",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "Ever feel trapped in your own thoughts? 🌀 Let’s unpack what stress really does to you."
-    },
-    {
-      "id": "yt7",
-      "title": "YouTube Short 7",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "Your mind racing, heart pounding 😰… sounds familiar? Here’s why that happens."
-    },
-    {
-      "id": "yt8",
-      "title": "YouTube Short 8",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "Stress isn’t just in your head—it’s in your body too. 🧠💓 Let’s break it down."
-    },
-    {
-      "id": "yt9",
-      "title": "YouTube Short 9",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "Feeling burnt out? 🔥 You deserve to understand what’s happening and how to breathe again."
-    },
-    {
-      "id": "yt10",
-      "title": "YouTube Short 10",
-      "url": "https://youtu.be/9EZnPqhPTzg?si=ZRCbYeTvuRTgoDKS",
-      "thumbnail": "auto",
-      "description": "Life can feel heavy sometimes 😔… here’s a simple way to lighten the load."
-    }
+    { "id":"yt1","title":"Talk2Health — Episode 1","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 1 — Voices of Care."},
+    { "id":"yt2","title":"Talk2Health — Episode 2","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 2 — Voices of Care."},
+    { "id":"yt3","title":"Talk2Health — Episode 3","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 3 — Voices of Care."},
+    { "id":"yt4","title":"Talk2Health — Episode 4","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 4 — Voices of Care."},
+    { "id":"yt5","title":"Talk2Health — Episode 5","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 5 — Voices of Care."},
+    { "id":"yt6","title":"Talk2Health — Episode 6","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 6 — Voices of Care."},
+    { "id":"yt7","title":"Talk2Health — Episode 7","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 7 — Voices of Care."},
+    { "id":"yt8","title":"Talk2Health — Episode 8","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 8 — Voices of Care."},
+    { "id":"yt9","title":"Talk2Health — Episode 9","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 9 — Voices of Care."},
+    { "id":"yt10","title":"Talk2Health — Episode 10","url":"https://youtu.be/iGmKiJSV7Uw","thumbnail":"auto","description":"Episode 10 — Voices of Care."}
   ]
 }
