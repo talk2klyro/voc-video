@@ -1,6 +1,18 @@
 {
   "videos": [
-    { "id":"ad1","title":"Audio — Quick Tip 1","url":"https://example.com/audio/tip1.mp3","thumbnail":"https://img.youtube.com/vi/iGmKiJSV7Uw/hqdefault.jpg","description":"Audio tip 1" },
-    { "id":"ad2","title":"Audio — Quick Tip 2","url":"https://example.com/audio/tip2.mp3","thumbnail":"https://img.youtube.com/vi/iGmKiJSV7Uw/hqdefault.jpg","description":"Audio tip 2" }
+    {
+      "id": "ad1",
+      "title": "Audio — Quick Tip 1",
+      "url": "https://on.soundcloud.com/Xnm1FwZpCjPrkXCnlP",
+      "thumbnail": "https://img.youtube.com/vi/iGmKiJSV7Uw/hqdefault.jpg",
+      "description": "A short, engaging audio segment that promotes practical health awareness for everyday living."
+    },
+    {
+      "id": "ad2",
+      "title": "Audio — Quick Tip 2",
+      "url": "https://example.com/audio/tip2.mp3",
+      "thumbnail": "https://img.youtube.com/vi/iGmKiJSV7Uw/hqdefault.jpg",
+      "description": "A quick health education reminder designed to help listeners make informed wellness decisions."
+    }
   ]
 }
